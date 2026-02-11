@@ -21,7 +21,7 @@ class ChatService {
         }
 
         // Pass userId as query param for UserHandshakeHandler
-        const socket = new SockJS(`http://localhost:8080/ws?userId=${userId}`);
+        const socket = new SockJS(`https://one-hr-n4e6.onrender.com/ws?userId=${userId}`);
         this.stompClient = new Client({
             webSocketFactory: () => socket,
             debug: (str) => {
