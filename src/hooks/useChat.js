@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import chatService from '../services/chatService';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/chat';
+const API_BASE_URL = 'https://one-hr-n4e6.onrender.com/api/chat';
 
 export const useChat = (currentUserId, recipientId) => {
     const [messages, setMessages] = useState([]);
