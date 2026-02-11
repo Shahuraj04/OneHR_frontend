@@ -30,7 +30,7 @@ const ConversationList = ({ currentUserId, onSelectConversation }) => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.get(
-                `http://localhost:8080/api/chat/conversations?userId=${currentUserId}`,
+                `https://one-hr-n4e6.onrender.com/api/chat/conversations?userId=${currentUserId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             setConversations(response.data);
@@ -45,7 +45,7 @@ const ConversationList = ({ currentUserId, onSelectConversation }) => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.get(
-                `http://localhost:8080/api/chat/suggestions?userId=${currentUserId}`,
+                `https://one-hr-n4e6.onrender.com/api/chat/suggestions?userId=${currentUserId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             setSuggestions(response.data);
@@ -63,7 +63,7 @@ const ConversationList = ({ currentUserId, onSelectConversation }) => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.get(
-                `http://localhost:8080/api/chat/users?query=${query}&currentUserId=${currentUserId}`,
+                `https://one-hr-n4e6.onrender.com/api/chat/users?query=${query}&currentUserId=${currentUserId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             const existingIds = new Set(conversations.map(c => String(c.userId)));
