@@ -23,8 +23,7 @@ const employeeService = {
 
     getEmployeeByUserId: async (userId) => {
         try {
-            // Note: This endpoint might need to be exposed explicitly if not already
-            const response = await api.get(`/employee/user/${userId}`);
+             const response = await api.get(`/employee/user/${userId}`);
             return response.data;
         } catch (error) {
             console.error(`Error fetching employee for user ${userId}:`, error);

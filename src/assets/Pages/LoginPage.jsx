@@ -14,9 +14,7 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // CDN injection removed as Tailwind is now properly configured locally
-  }, []);
+  useEffect(() => {  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -42,8 +40,7 @@ export default function LoginPage() {
   return (
     <div className="h-full w-full bg-slate-900 flex items-center justify-center font-sans text-slate-900 overflow-hidden relative">
 
-      {/* BACKGROUND IMAGE STRATEGY: Full Screen Soft Blur */}
-      <div
+       <div
         className="absolute inset-0 z-0 opacity-40"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -53,11 +50,9 @@ export default function LoginPage() {
         }}
       />
 
-      {/* Main Container */}
-      <div className="w-full h-full max-w-6xl lg:h-[85%] lg:max-h-[800px] grid grid-cols-1 lg:grid-cols-2 bg-white/90 lg:rounded-3xl shadow-2xl overflow-hidden z-10 backdrop-blur-md border border-white/20">
+       <div className="w-full h-full max-w-6xl lg:h-[85%] lg:max-h-[800px] grid grid-cols-1 lg:grid-cols-2 bg-white/90 lg:rounded-3xl shadow-2xl overflow-hidden z-10 backdrop-blur-md border border-white/20">
 
-        {/* Left Section (Branding with Specific HR Image) */}
-        <div
+         <div
           className="hidden lg:flex flex-col justify-between p-12 lg:p-14 h-full relative text-white"
           style={{
             backgroundImage: "linear-gradient(to bottom right, rgba(37, 99, 235, 0.85), rgba(67, 56, 202, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -90,8 +85,7 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Right Section (Form) */}
-        <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center h-full bg-white/80">
+         <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center h-full bg-white/80">
           <div className="mb-8 text-center lg:text-left">
             <div className="lg:hidden flex justify-center mb-6">
               <div className="flex items-center space-x-2 text-blue-600 bg-blue-50 px-4 py-2 rounded-full">

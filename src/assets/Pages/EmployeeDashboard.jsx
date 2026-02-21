@@ -84,8 +84,7 @@ export default function EmployeeDashboard({ profile, onRefresh, leaves = [] }) {
             await leaveService.applyLeave(payload);
             alert('Leave applied successfully!');
             setShowLeaveModal(false);
-            // Refresh leave history
-            try {
+             try {
                 const history = await leaveService.getLeavesByEmployee(profile.empId);
                 setLeaveHistory(history);
             } catch (err) {
@@ -125,8 +124,7 @@ export default function EmployeeDashboard({ profile, onRefresh, leaves = [] }) {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Stats Summary */}
-                <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-100/30">                        <div className="flex items-center justify-between mb-4">
                         <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl">
                             <Briefcase size={24} />
@@ -148,10 +146,8 @@ export default function EmployeeDashboard({ profile, onRefresh, leaves = [] }) {
                     </div>
                 </div>
 
-                {/* Right Column: Actions & Todo */}
-                <div className="flex flex-col gap-8">
-                    {/* Quick Actions */}
-                    <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-100/30 flex flex-col space-y-4">
+                 <div className="flex flex-col gap-8">
+                     <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-100/30 flex flex-col space-y-4">
                         <CheckoutButton empId={profile.empId} />
 
                         <button
@@ -163,13 +159,11 @@ export default function EmployeeDashboard({ profile, onRefresh, leaves = [] }) {
                         </button>
                     </div>
 
-                    {/* Todo List */}
-                    <TodoList userKey={`emp_${profile.empId}`} />
+                     <TodoList userKey={`emp_${profile.empId}`} />
                 </div>
             </div>
 
-            {/* Application History */}
-            <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
+             <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
                 <div className="flex items-center justify-between mb-8">
                     <h3 className="font-black text-2xl text-slate-800 flex items-center space-x-3">
                         <div className="p-2 bg-indigo-50 text-indigo-600 rounded-xl">

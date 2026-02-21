@@ -28,8 +28,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
         };
     });
 
-    // Unified fetch logic with polling
-    useEffect(() => {
+     useEffect(() => {
         const fetchCompanyAttendance = async () => {
             try {
                 const params = new URLSearchParams({
@@ -69,8 +68,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
         ];
     }, [companyRows]);
 
-    // Data for Department Chart
-    const deptData = useMemo(() => {
+     const deptData = useMemo(() => {
         if (!employees || employees.length === 0) return [];
         const counts = employees.reduce((acc, emp) => {
             const dept = emp.department?.deptName || emp.department?.dept_name || 'Unassigned';
@@ -104,8 +102,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
         }
     };
 
-    // Live Presence Calculation
-    const livePulse = useMemo(() => {
+     const livePulse = useMemo(() => {
         const today = new Date();
         const todayDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
@@ -123,8 +120,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
 
     return (
         <div className="space-y-8">
-            {/* Live Presence Pulse - Great for Interviews! */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="md:col-span-3 bg-slate-900 rounded-[2.5rem] p-8 text-white relative overflow-hidden shadow-2xl shadow-indigo-200">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full -mr-20 -mt-20 blur-3xl"></div>
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -152,8 +148,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Attendance Pie Chart */}
-                <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
+                 <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
                     <h3 className="font-black text-xl mb-6 text-slate-800 uppercase tracking-wider text-center">
                         Workforce Attendance
                     </h3>
@@ -184,8 +179,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
                     </div>
                 </div>
 
-                {/* Employees per Department Bar Chart */}
-                <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
+                 <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
                     <h3 className="font-black text-xl mb-6 text-slate-800 uppercase tracking-wider text-center">
                         Employees per Department
                     </h3>
@@ -226,8 +220,7 @@ export default function AdminDashboard({ employees = [], hrs = [] }) {
             </div>
 
 
-            {/* Attendance Table */}
-            <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30 overflow-hidden">
+             <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30 overflow-hidden">
                 <div className="flex items-center justify-between mb-6">
                     <h3 className="font-black text-xl text-slate-800 uppercase tracking-wider">Company Attendance</h3>
                     <div className="flex items-center space-x-3">

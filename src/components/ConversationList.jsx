@@ -166,8 +166,7 @@ const ConversationList = ({ currentUserId, onSelectConversation }) => {
                     </div>
                 )}
 
-                {/* Suggestions Section - Only shown if no search term */}
-                {!searchTerm && filteredSuggestions.length > 0 && (
+                 {!searchTerm && filteredSuggestions.length > 0 && (
                     <div className="bg-slate-50/30">
                         <div className="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
                             Suggested Contacts
@@ -192,8 +191,7 @@ const ConversationList = ({ currentUserId, onSelectConversation }) => {
                     </div>
                 )}
 
-                {/* Recent Conversations */}
-                {loading && conversations.length === 0 ? (
+                 {loading && conversations.length === 0 ? (
                     <div className="flex justify-center items-center py-10">
                         <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-600"></div>
                     </div>

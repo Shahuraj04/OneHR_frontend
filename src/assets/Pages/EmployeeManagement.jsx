@@ -15,8 +15,7 @@ export default function EmployeeManagement() {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Onboarding States
-    const [showAddModal, setShowAddModal] = useState(false);
+     const [showAddModal, setShowAddModal] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [message, setMessage] = useState({ type: '', text: '' });
     const [hrProfile, setHrProfile] = useState(null);
@@ -106,8 +105,7 @@ export default function EmployeeManagement() {
 
     return (
         <div className="flex h-screen bg-slate-50 overflow-hidden">
-            {/* Notification Toast */}
-            {message.text && (
+             {message.text && (
                 <div className={`fixed top-5 right-5 z-[110] p-5 rounded-2xl shadow-2xl flex items-center space-x-3 transition-all animate-in slide-in-from-right-10 ${message.type === 'success' ? 'bg-indigo-600 text-white' : 'bg-red-500 text-white'}`}>
                     {message.type === 'success' ? <CheckCircle size={24} /> : <X size={24} />}
                     <span className="font-bold text-sm uppercase">{message.text}</span>
@@ -187,8 +185,7 @@ export default function EmployeeManagement() {
                 </div>
             </main>
 
-            {/* Ported Onboarding Modal */}
-            {showAddModal && (
+             {showAddModal && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-300">
                     <div className="bg-white rounded-[3rem] w-full max-w-2xl p-10 shadow-2xl relative overflow-hidden">
                         <div className="flex items-center justify-between mb-8">

@@ -9,8 +9,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // CDN injection removed as Tailwind is now properly configured locally
-  }, []);
+   }, []);
 
   const features = [
     { icon: <Users className="w-8 h-8" />, title: 'Employee Management', description: 'Comprehensive employee profiles, onboarding, and lifecycle management', color: 'blue' },
@@ -30,8 +29,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
-      {/* Hero */}
-      <div className="relative overflow-hidden">
+       <div className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style={{ top: '-50px', left: '10%' }} />
           <div className="absolute w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style={{ top: '100px', right: '10%', animationDelay: '2s' }} />
@@ -91,8 +89,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Features */}
-      <div className="container mx-auto px-6 py-20">
+       <div className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Everything You Need to <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Succeed</span>
@@ -119,8 +116,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="container mx-auto px-6 py-20">
+       <div className="container mx-auto px-6 py-20">
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-12 md:p-20 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           <div className="relative z-10">

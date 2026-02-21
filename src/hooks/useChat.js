@@ -31,8 +31,7 @@ export const useChat = (currentUserId, recipientId) => {
     }, [currentUserId, recipientId]);
 
     const onMessageReceived = useCallback((message) => {
-        // Only add if it belongs to current conversation
-        const msgSenderId = String(message.senderId);
+         const msgSenderId = String(message.senderId);
         const msgRecipientId = String(message.recipientId);
         const activeRecipientId = String(recipientId);
 
@@ -64,13 +63,10 @@ export const useChat = (currentUserId, recipientId) => {
             }
         );
 
-        // Ensure callbacks are updated if the hook is reused without reconnecting
-        chatService.updateCallbacks(onMessageReceived, onTypingReceived);
+         chatService.updateCallbacks(onMessageReceived, onTypingReceived);
 
         return () => {
-            // We don't necessarily want to disconnect on every unmount if we move between chats
-            // but for this specific hook use case, we can.
-        };
+         };
     }, [currentUserId, onMessageReceived, onTypingReceived]);
 
     useEffect(() => {
@@ -88,8 +84,7 @@ export const useChat = (currentUserId, recipientId) => {
             timestamp: new Date().toISOString()
         };
 
-        // Optimistic update
-        setMessages((prev) => [...prev, messageDTO]);
+         setMessages((prev) => [...prev, messageDTO]);
 
         chatService.sendMessage(messageDTO);
     }, [currentUserId, recipientId]);

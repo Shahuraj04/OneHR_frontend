@@ -32,8 +32,7 @@ export default function TeamTimesheetTable({ hrId }) {
         if (!hrId) return;
         fetchData();
         fetchSummary();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [hrId, filters.startDate, filters.endDate, filters.status, filters.empId]);
+     }, [hrId, filters.startDate, filters.endDate, filters.status, filters.empId]);
 
     const fetchData = async () => {
         try {

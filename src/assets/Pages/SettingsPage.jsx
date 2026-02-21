@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../../components/Sidebar';
 import authService from '../../services/authService';
 import employeeService from '../../services/employeeService';
-import hrService from '../../services/hrService'; // Need to check if this exists
+import hrService from '../../services/hrService';  
 import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, Lock, Save, Briefcase } from 'lucide-react';
 
@@ -68,11 +68,9 @@ export default function SettingsPage() {
                         phone: data.phone,
                         password: '',
                         deptId: data.department?.deptId
-                        // Add other HR fields if needed
-                    });
+                     });
                 } catch (e) {
-                    // Fallback if HR profile doesn't exist for Admin
-                    setProfile({
+                     setProfile({
                         id: null,
                         name: user.role.replace('ROLE_', ''),
                         email: user.email,

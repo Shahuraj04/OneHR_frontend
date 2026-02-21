@@ -28,8 +28,7 @@ export default function CheckoutButton({ empId, onStatusChange }) {
         setError('');
         try {
             const now = new Date();
-            // Using local date instead of UTC to avoid date-shifts in early morning
-            const year = now.getFullYear();
+             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const day = String(now.getDate()).padStart(2, '0');
             const localDate = `${year}-${month}-${day}`;

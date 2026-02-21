@@ -5,15 +5,13 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Component Imports
-import Sidebar from '../../components/Sidebar';
+ import Sidebar from '../../components/Sidebar';
 import StatCard from '../../components/StatCard';
 import AdminDashboard from './AdminDashboard';
 import HRDashboard from './HRDashboard';
 import EmployeeDashboard from './EmployeeDashboard';
 
-// Service Imports
-import employeeService from '../../services/employeeService';
+ import employeeService from '../../services/employeeService';
 import authService from '../../services/authService';
 import leaveService from '../../services/leaveservice';
 import attendanceService from '../../services/attendanceService';
@@ -111,11 +109,9 @@ export default function Dashboard() {
 
       <Sidebar onLogout={handleLogout} userData={userData} />
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+       <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
 
-        {/* Header */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 z-10 shrink-0">
+         <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 z-10 shrink-0">
           <div className="flex items-center bg-slate-100 px-4 py-2 rounded-xl w-96 border border-slate-200">
           </div>
 
@@ -134,12 +130,10 @@ export default function Dashboard() {
           </div>
         </header>
 
-        {/* Scrollable Area */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar">
+         <div className="flex-1 overflow-y-auto custom-scrollbar">
           <div className="p-8 max-w-7xl mx-auto">
 
-            {/* Welcome Section */}
-            <div className="flex items-center justify-between mb-8">
+             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
                   Welcome back, <span className="text-indigo-600">{userData.email.split('@')[0]}</span>
@@ -157,8 +151,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            {/* Stats Grid */}
-            {userData.role !== 'ROLE_EMPLOYEE' && (
+             {userData.role !== 'ROLE_EMPLOYEE' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <StatCard label="Total Employees" value={employeeCount.toLocaleString()} icon={<Users className="text-blue-600" />}  />
                 <StatCard label="Active Leave" value={approvedLeaves.toLocaleString()} icon={<Calendar className="text-amber-600" />} />

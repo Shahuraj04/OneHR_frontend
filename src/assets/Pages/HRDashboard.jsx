@@ -159,8 +159,7 @@ export default function HRDashboard({ team, activity, leaves = [], onRefresh, us
                         </div>
                     </div>
 
-                    {/* Leave Approvals */}
-                    <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
+                     <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-xl shadow-slate-100/30">
                         <h3 className="font-black text-2xl mb-8 text-slate-800 flex items-center space-x-3">
                             <div className="p-2 bg-rose-50 text-rose-600 rounded-xl">
                                 <Send size={20} />
@@ -227,19 +226,16 @@ export default function HRDashboard({ team, activity, leaves = [], onRefresh, us
                     </div>
                 </div>
 
-                {/* Right Column: Todo List */}
-                <div className="lg:col-span-1">
+                 <div className="lg:col-span-1">
                     <TodoList userKey={`hr_${userData?.id}`} />
                 </div>
             </div>
 
-            {/* Team Timesheet */}
-            {hrProfile?.hrId && (
+             {hrProfile?.hrId && (
                 <TeamTimesheetTable hrId={hrProfile.hrId} />
             )}
 
-            {/* Add Employee Modal */}
-            {showAddModal && (
+             {showAddModal && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-300">
                     <div className="bg-white rounded-[3rem] w-full max-w-2xl p-12 shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-500">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16"></div>

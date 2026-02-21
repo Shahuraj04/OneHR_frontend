@@ -29,8 +29,7 @@ export default function TimesheetTable({ empId }) {
     useEffect(() => {
         if (!empId) return;
         fetchData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [empId, filters.startDate, filters.endDate, filters.status]);
+     }, [empId, filters.startDate, filters.endDate, filters.status]);
 
     const fetchData = async () => {
         try {

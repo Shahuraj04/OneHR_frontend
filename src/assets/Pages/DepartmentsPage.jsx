@@ -156,8 +156,7 @@ export default function DepartmentsPage() {
                 </div>
             </main>
 
-            {/* Add Modal */}
-            {showAddModal && (
+             {showAddModal && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
                     <div className="bg-white rounded-3xl w-full max-w-lg p-10 shadow-2xl">
                         <div className="flex items-center justify-between mb-8">
@@ -186,8 +185,7 @@ export default function DepartmentsPage() {
                 </div>
             )}
 
-            {/* Edit Modal */}
-            {showEditModal && selectedDept && (
+             {showEditModal && selectedDept && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
                     <div className="bg-white rounded-3xl w-full max-w-lg p-10 shadow-2xl">
                         <div className="flex items-center justify-between mb-8">

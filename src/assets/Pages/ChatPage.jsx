@@ -37,10 +37,8 @@ const ChatPage = () => {
         <div className="flex h-screen w-full bg-slate-50 font-sans text-slate-900 overflow-hidden">
             <Sidebar onLogout={handleLogout} userData={userData} />
 
-            {/* Main Content */}
-            <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-                {/* Header */}
-                <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 z-10 shrink-0">
+             <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
+                 <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 z-10 shrink-0">
                     <div className="flex items-center space-x-2">
                         <ChatBubbleLeftIcon className="w-5 h-5 text-indigo-600" />
                         <h1 className="text-lg font-bold text-slate-800">Messages</h1>
@@ -59,18 +57,15 @@ const ChatPage = () => {
                     </div>
                 </header>
 
-                {/* Chat Area */}
-                <div className="flex-1 flex overflow-hidden">
-                    {/* Conversation List Sidebar */}
-                    <div className="w-80 flex-shrink-0 flex flex-col h-full border-r border-slate-200 bg-white">
+                 <div className="flex-1 flex overflow-hidden">
+                     <div className="w-80 flex-shrink-0 flex flex-col h-full border-r border-slate-200 bg-white">
                         <ConversationList
                             currentUserId={String(userData.id)}
                             onSelectConversation={setSelectedConversation}
                         />
                     </div>
 
-                    {/* Chat Window */}
-                    <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
+                     <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
                         {selectedConversation ? (
                             <ChatWindow
                                 currentUser={{
