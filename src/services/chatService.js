@@ -20,8 +20,7 @@ class ChatService {
             return;
         }
 
-        // Pass userId as query param for UserHandshakeHandler
-        const socket = new SockJS(`https://one-hr-n4e6.onrender.com/ws?userId=${userId}`);
+         const socket = new SockJS(`https://one-hr-n4e6.onrender.com/ws?userId=${userId}`);
         this.stompClient = new Client({
             webSocketFactory: () => socket,
             debug: (str) => {
@@ -36,16 +35,13 @@ class ChatService {
             this.isConnected = true;
             console.log('STOMP Connected: ' + userId);
 
-            // Subscribe to private message queue
-            // Note: Standard user destination subscription is /user/queue/messages
-            this.stompClient.subscribe(`/user/queue/messages`, (message) => {
+              this.stompClient.subscribe(`/user/queue/messages`, (message) => {
                 if (this.onMessageReceived) {
                     this.onMessageReceived(JSON.parse(message.body));
                 }
             });
 
-            // Subscribe to private typing indicator queue
-            this.stompClient.subscribe(`/user/queue/typing`, (message) => {
+             this.stompClient.subscribe(`/user/queue/typing`, (message) => {
                 if (this.onTypingReceived) {
                     this.onTypingReceived(JSON.parse(message.body));
                 }
